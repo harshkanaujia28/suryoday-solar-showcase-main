@@ -40,7 +40,6 @@ export function Footer() {
               {[
                 { Icon: FaFacebookF, href: SITE.socials.facebook },
                 { Icon: FaInstagram, href: SITE.socials.instagram },
-                { Icon: FaLinkedinIn, href: SITE.socials.linkedin },
                 { Icon: FaYoutube, href: SITE.socials.youtube },
               ].map(({ Icon, href }, i) => (
                 <a

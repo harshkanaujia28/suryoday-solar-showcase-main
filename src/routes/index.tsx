@@ -3,6 +3,7 @@ import { SiteLayout } from "@/layouts/SiteLayout";
 import { Hero } from "@/components/home/Hero";
 import { TrustBar, Stats, WhyUs, ProcessSection, FAQ, Testimonials, FinalCTA } from "@/components/home/Sections";
 import { AboutSection, ContactSection, ProjectsSection, ServicesSection, SubsidySection } from "@/components/home/SinglePageSections";
+import { VideoSection } from "@/components/VideoSection";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -36,6 +37,7 @@ function Home() {
       <FAQ />
       <ContactSection />
       <FinalCTA />
+      <VideoSection />
     </SiteLayout>
   );
 }

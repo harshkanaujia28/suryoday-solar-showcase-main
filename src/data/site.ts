@@ -8,10 +8,9 @@ export const SITE = {
   address: "Chandauli, Bihar 848115, India",
   hours: "Mon – Sat: 9:00 AM – 7:00 PM",
   socials: {
-    facebook: "https://facebook.com",
-    instagram: "https://instagram.com",
-    linkedin: "https://linkedin.com",
-    youtube: "https://youtube.com",
+    facebook: "https://www.facebook.com/share/1ADqv2cSGQ/",
+    instagram: "https://www.instagram.com/suryodaysolarenargy.in?xtok=MXkxNHlrN3E5MnZkaQ%3D%3D",
+    youtube: "https://youtube.com/@suryodaysolarenergy?si=1n2RZx3yOpm9hPO8",
   },
 };
 

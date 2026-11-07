@@ -9,7 +9,6 @@ import p3 from "@/assets/projects/solar-project-inverter-2.png";
 import p4 from "@/assets/projects/solar-project-inverter-3.png";
 import p5 from "@/assets/projects/solar-project-installation-team.png";
 import p6 from "@/assets/projects/solar-project-hybrid-system.png";
-
 export const STATS = [
   { value: 500, suffix: "+", label: "Projects Completed" },
   { value: 10, suffix: "+", label: "Years Experience" },
@@ -72,12 +71,66 @@ export const SERVICES = [
 ];
 
 export const PROJECTS = [
-  { id: 1, title: "Rooftop Solar Installation", category: "Residential", capacity: "Rooftop system", location: "Sahpur Baghauni, Bihar", savings: "Contact for details", img: p1, span: "row-span-1" },
-  { id: 2, title: "Solar Inverter Installation", category: "Residential", capacity: "Waaree inverter", location: "Sahpur Baghauni, Bihar", savings: "Contact for details", img: p2, span: "row-span-2" },
-  { id: 3, title: "Rooftop Solar Installation", category: "Residential", capacity: "Panel installation", location: "Sheohar, Bihar", savings: "Contact for details", img: p3, span: "row-span-1" },
-  { id: 4, title: "Hybrid Solar & Battery System", category: "Residential", capacity: "Deye hybrid system", location: "Bihar, India", savings: "Contact for details", img: p4, span: "row-span-2" },
-  { id: 5, title: "Residential Solar Inverter", category: "Residential", capacity: "Luminous inverter", location: "Bihar, India", savings: "Contact for details", img: p5, span: "row-span-1" },
-  { id: 6, title: "Residential Solar Inverter", category: "Residential", capacity: "Polycab inverter", location: "Bihar, India", savings: "Contact for details", img: p6, span: "row-span-2" },
+  {
+    id: 1,
+    title: "Rooftop Solar Installation",
+    category: "Residential",
+    capacity: "Rooftop system",
+    location: "Sahpur Baghauni, Bihar",
+    savings: "Contact for details",
+    img: p1,
+    span: "row-span-1",
+  },
+  {
+    id: 2,
+    title: "Solar Inverter Installation",
+    category: "On-Grid Solar",
+    capacity: "Waaree inverter",
+    location: "Sahpur Baghauni, Bihar",
+    savings: "Contact for details",
+    img: p2,
+    span: "row-span-2",
+  },
+  {
+    id: 3,
+    title: "Rooftop Solar Installation",
+    category: "Residential",
+    capacity: "Panel installation",
+    location: "Sheohar, Bihar",
+    savings: "Contact for details",
+    img: p3,
+    span: "row-span-1",
+  },
+  {
+    id: 4,
+    title: "Deye Hybrid Solar System",
+    category: "Hybrid Solar",
+    capacity: "Deye inverter with battery storage",
+    location: "Bihar, India",
+    savings: "Contact for details",
+    img: p6,
+    span: "row-span-2",
+  },
+  {
+    id: 5,
+    title: "Solar Installation Team",
+    category: "Residential",
+    capacity: "Solar installation",
+    location: "Bihar, India",
+    savings: "Contact for details",
+    img: p5,
+    span: "row-span-1",
+  },
+  {
+    id: 6,
+    title: "On-Grid Solar Inverter",
+    category: "On-Grid Solar",
+    capacity: "Inverter without battery storage",
+    location: "Bihar, India",
+    savings: "Contact for details",
+    img: p4,
+    span: "row-span-2",
+  },
 ];
 
 export const PROCESS = [
