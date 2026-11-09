@@ -9,6 +9,8 @@ import p3 from "@/assets/projects/solar-project-inverter-2.png";
 import p4 from "@/assets/projects/solar-project-inverter-3.png";
 import p5 from "@/assets/projects/solar-project-installation-team.png";
 import p6 from "@/assets/projects/solar-project-hybrid-system.png";
+import p7 from "@/assets/projects/rooftop-installation-01.jpeg";
+import p8 from "@/assets/projects/rooftop-installation-02.jpeg.jpeg";
 export const STATS = [
   { value: 500, suffix: "+", label: "Projects Completed" },
   { value: 10, suffix: "+", label: "Years Experience" },
@@ -131,6 +133,27 @@ export const PROJECTS = [
     img: p4,
     span: "row-span-2",
   },
+ 
+  {
+    id: 7,
+    title: "Rooftop Solar Installation",
+    category: "Residential",
+    capacity: "Contact for details",
+    location:"Bihar, India",
+    savings: "Enquire for details",
+    img: p7,
+    span: "",
+  },
+  {
+    id: 8,
+    title: "Solar Panel Structure Installation",
+    category: "Residential",
+    capacity: "Contact for details",
+    location: "Bihar, India",
+    savings: "Enquire for details",
+    img: p8,
+    span: "",
+  },
 ];
 
 export const PROCESS = [
@@ -171,4 +194,106 @@ export const BLOG_POSTS = [
   { slug: "on-grid-vs-off-grid", title: "On-Grid vs Off-Grid vs Hybrid: Which is Right for You?", excerpt: "Pros, cons and cost comparison of the three rooftop solar configurations.", category: "Basics", date: "May 22, 2026", read: "7 min" },
   { slug: "commercial-solar-depreciation", title: "Accelerated Depreciation Benefits for Commercial Solar", excerpt: "How businesses can claim 40% accelerated depreciation in year one.", category: "Commercial", date: "May 10, 2026", read: "5 min" },
   { slug: "monsoon-solar-maintenance", title: "Monsoon Solar Maintenance Checklist", excerpt: "Keep your system performing through India's monsoon season with these steps.", category: "Maintenance", date: "Apr 28, 2026", read: "4 min" },
+];
+
+export const PRODUCTS = [
+  {
+    id: "solar-panels",
+    name: "Solar Panels",
+    category: "Solar Panels",
+    description:
+      "Solar panel solutions for residential and commercial installations. Contact our team for available models, capacities and pricing.",
+    img: "/images/solar-panels.jpeg",
+    imageAlt: "Solar panel modules",
+  },
+  {
+    id: "hybrid-inverter",
+    name: "Deye Solar Inverter",
+    category: "Solar Inverters",
+    description:
+      "Deye solar inverter solution for solar power installations. Contact us for model details, compatibility and pricing.",
+    img: "/images/solar-hybrid-inverter.jpeg",
+    imageAlt: "Deye solar inverter",
+  },
+  {
+    id: "solar-battery",
+    name: "Solar Battery 48V 100Ah",
+    category: "Energy Storage",
+    description:
+      "48V 100Ah battery shown in the product image. Contact our team for complete specifications, compatibility and pricing.",
+    img: "/images/solar-battery-48v-100ah.jpeg",
+    imageAlt: "48V 100Ah solar battery",
+  },
+  {
+    id: "solar-flood-light",
+    name: "Solar Flood Lights",
+    category: "Solar Lighting",
+    description:
+      "Solar-powered flood lighting options for outdoor areas. Enquire for available models and product specifications.",
+    img: "/images/solar-flood-light.jpeg",
+    imageAlt: "Solar flood light",
+  },
+  {
+    id: "solar-street-light",
+    name: "Solar Street Lights",
+    category: "Solar Lighting",
+    description:
+      "Solar street lighting solutions for roads, pathways and outdoor spaces. Contact us for product details and pricing.",
+    img: "/images/solar-street-lights-range.jpeg",
+    imageAlt: "Solar street lights range",
+  },
+  {
+    id: "solar-street-light-remote",
+    name: "Solar Street Light with Remote",
+    category: "Solar Lighting",
+    description:
+      "Solar street light with remote control shown in the product image. Enquire for specifications and availability.",
+    img: "/images/solar-street-light-remote.jpeg",
+    imageAlt: "Solar street light with remote",
+  },
+  {
+    id: "solar-wall-light",
+    name: "Solar Wall Lights",
+    category: "Outdoor Lighting",
+    description:
+      "Outdoor solar wall lights for entrances, exterior walls and other outdoor spaces.",
+    img: "/images/solar-wall-light-dual.jpeg",
+    imageAlt: "Solar wall lights",
+  },
+  {
+    id: "solar-wall-lantern",
+    name: "Solar Wall Lantern",
+    category: "Decorative Lighting",
+    description:
+      "Decorative solar wall lantern for exterior walls, entrances and outdoor decoration.",
+    img: "/images/solar-wall-lantern.jpeg",
+    imageAlt: "Solar wall lantern",
+  },
+  {
+    id: "solar-wall-lantern-warm",
+    name: "Solar Wall Lantern – Warm Light",
+    category: "Decorative Lighting",
+    description:
+      "Warm-light decorative solar lantern for outdoor walls and entrances.",
+    img: "/images/solar-wall-lantern-warm.jpeg",
+    imageAlt: "Warm light solar wall lantern",
+  },
+  {
+    id: "solar-torch-lights",
+    name: "Solar Torch Lights",
+    category: "Garden Lighting",
+    description:
+      "Decorative solar torch lights for gardens, pathways and outdoor spaces.",
+    img: "/images/solar-torch-lights-set.jpeg",
+    imageAlt: "Solar torch garden lights",
+  },
+  {
+    id: "solar-flame-torch",
+    name: "Solar Flame Torch Lights",
+    category: "Garden Lighting",
+    description:
+      "Flame-effect decorative solar lights for gardens, landscapes and outdoor decoration.",
+    img: "/images/solar-flame-torch-lights.jpeg",
+    imageAlt: "Solar flame torch lights",
+  },
 ];

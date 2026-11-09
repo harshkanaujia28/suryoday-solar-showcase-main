@@ -4,6 +4,7 @@ import { Hero } from "@/components/home/Hero";
 import { TrustBar, Stats, WhyUs, ProcessSection, FAQ, Testimonials, FinalCTA } from "@/components/home/Sections";
 import { AboutSection, ContactSection, ProjectsSection, ServicesSection, SubsidySection } from "@/components/home/SinglePageSections";
 import { VideoSection } from "@/components/VideoSection";
+import { ProductsShowcase } from "@/components/ProductsShowcase";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -30,6 +31,7 @@ function Home() {
       <AboutSection />
       <WhyUs />
       <ServicesSection />
+      <ProductsShowcase />
       <ProjectsSection />
       <SubsidySection />
       <ProcessSection />
