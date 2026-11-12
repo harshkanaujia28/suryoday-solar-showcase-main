@@ -113,16 +113,7 @@ export const PROJECTS = [
     img: p6,
     span: "row-span-2",
   },
-  {
-    id: 5,
-    title: "Solar Installation Team",
-    category: "Residential",
-    capacity: "Solar installation",
-    location: "Bihar, India",
-    savings: "Contact for details",
-    img: p5,
-    span: "row-span-1",
-  },
+
   {
     id: 6,
     title: "On-Grid Solar Inverter",
