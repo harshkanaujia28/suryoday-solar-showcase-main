@@ -5,7 +5,7 @@ export const SITE = {
   phoneRaw: "919625753256",
   whatsapp: "919625753256",
   email: "suryodaysolarenargy@gmail.com",
-  address: "Chandauli, Bihar 848115, India",
+  address: "Samastipu, Bihar 848115, India",
   hours: "Mon – Sat: 9:00 AM – 7:00 PM",
   socials: {
     facebook: "https://www.facebook.com/share/1ADqv2cSGQ/",

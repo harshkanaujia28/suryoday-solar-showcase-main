@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import { PlayCircle, Sun, ShieldCheck } from "lucide-react";
 
 export function VideoSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -11,7 +12,7 @@ export function VideoSection() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          video.play().catch((error) => {
+          video.play().catch((error: unknown) => {
             console.warn("Video autoplay prevented:", error);
           });
         } else {
@@ -32,56 +33,95 @@ export function VideoSection() {
   }, []);
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#003D35] px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+    <section className="relative w-full overflow-hidden bg-[#F0F7F2] px-4 py-14 sm:px-6 sm:py-20 lg:px-10 lg:py-24">
 
-      <div className="mx-auto w-full max-w-7xl">
+      {/* Decorative Background */}
+      <div className="pointer-events-none absolute -right-32 top-10 h-80 w-80 rounded-full bg-[#0D9560]/10 blur-3xl" />
+      <div className="pointer-events-none absolute -left-32 bottom-0 h-80 w-80 rounded-full bg-[#FDBA24]/10 blur-3xl" />
 
-        {/* Heading */}
+      <div className="relative mx-auto w-full max-w-7xl">
+
+        {/* Section Heading */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
-          className="mb-8 text-center sm:mb-10"
+          className="mx-auto mb-10 max-w-3xl text-center sm:mb-14"
         >
-          <span className="mb-3 inline-block text-sm font-semibold uppercase tracking-widest text-[var(--color-solar-yellow)]">
-            Suryoday Solar Energy
-          </span>
+          {/* Badge */}
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#0D9560]/15 bg-white px-4 py-2 shadow-sm">
+            <Sun className="h-4 w-4 text-[#F36B21]" />
 
-          <h2 className="font-display text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
-            हर घर बनेगा <span className="text-[var(--color-solar-yellow)]">सोलर घर</span>
+            <span className="text-xs font-bold uppercase tracking-[0.15em] text-[#075B3D] sm:text-sm">
+              Suryoday Solar Energy
+            </span>
+          </div>
+
+          {/* Heading */}
+          <h2 className="font-display text-3xl font-extrabold leading-tight tracking-tight text-[#06452F] sm:text-4xl lg:text-5xl">
+            हर घर बनेगा{" "}
+            <span className="bg-gradient-to-r from-[#0D9560] to-[#38A169] bg-clip-text text-transparent">
+              सोलर घर
+            </span>
           </h2>
 
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/70 sm:text-base lg:text-lg">
+          {/* Description */}
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-[#64786C] sm:text-base lg:text-lg">
             A step towards a brighter future with clean energy,
             reliable solar solutions and greater electricity savings.
           </p>
+
+          {/* Trust Indicators */}
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
+            <div className="flex items-center gap-2 text-sm font-medium text-[#075B3D]">
+              <ShieldCheck className="h-4 w-4 text-[#0D9560]" />
+              Clean Energy
+            </div>
+
+            <div className="flex items-center gap-2 text-sm font-medium text-[#075B3D]">
+              <Sun className="h-4 w-4 text-[#F36B21]" />
+              Solar Solutions
+            </div>
+          </div>
         </motion.div>
 
-        {/* Video */}
+        {/* Video Container */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.7 }}
-          className="relative w-full overflow-hidden rounded-xl border border-white/10 bg-black shadow-2xl sm:rounded-2xl"
+          className="relative mx-auto w-full max-w-6xl"
         >
-          <video
-            ref={videoRef}
-            controls
-            muted
-            playsInline
-            preload="metadata"
-            className="block aspect-video h-auto w-full object-contain"
-            aria-label="Suryoday Solar Energy installation video"
-          >
-            <source
-              src="/videos/suryoday-solar-video.mp4"
-              type="video/mp4"
-            />
+          {/* Video Frame */}
+          <div className="relative overflow-hidden rounded-2xl border border-[#075B3D]/10 bg-[#06452F] p-1.5 shadow-[0_25px_70px_rgba(6,69,47,0.16)] sm:rounded-3xl sm:p-2">
 
-            Your browser does not support video playback.
-          </video>
+            <div className="overflow-hidden rounded-xl bg-black sm:rounded-2xl">
+              <video
+                ref={videoRef}
+                controls
+                muted
+                playsInline
+                preload="metadata"
+                className="block aspect-video h-auto w-full object-contain"
+                aria-label="Suryoday Solar Energy installation video"
+              >
+                <source
+                  src="/videos/suryoday-solar-video.mp4"
+                  type="video/mp4"
+                />
+
+                Your browser does not support video playback.
+              </video>
+            </div>
+          </div>
+
+          {/* Bottom Accent */}
+          <div className="mx-auto mt-5 flex items-center justify-center gap-2 text-sm font-semibold text-[#075B3D]">
+            <PlayCircle className="h-4 w-4 text-[#F36B21]" />
+            Discover the power of solar energy
+          </div>
         </motion.div>
 
       </div>
