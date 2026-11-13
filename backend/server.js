@@ -350,5 +350,4 @@ app.use((error, req, res, next) => {
 
 app.listen(PORT, () => {
   console.log(`Suryoday Solar backend running on port ${PORT}`);
-  console.log("Allowed frontend origins:", origins);
 });
