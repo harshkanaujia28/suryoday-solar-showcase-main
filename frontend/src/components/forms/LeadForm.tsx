@@ -11,8 +11,12 @@ type Field =
   | "bill"
   | "message";
 
+const API_URL = (
+  import.meta.env.VITE_API_URL || "http://localhost:5000"
+).replace(/\/$/, "");
+
 export function LeadForm({
-  fields = ["name", "phone", "city", "bill"],
+  fields = ["name", "phone", "email", "city", "bill"],
   cta = "Get Free Proposal",
   variant = "card",
   source = "generic",
@@ -24,33 +28,80 @@ export function LeadForm({
 }) {
   const [loading, setLoading] = useState(false);
 
-  function handle(e: React.FormEvent<HTMLFormElement>) {
+  async function handle(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setLoading(true);
 
     const form = e.currentTarget;
-    const data = Object.fromEntries(new FormData(form));
+    const formData = new FormData(form);
 
-    setTimeout(() => {
-      const leads = JSON.parse(
-        localStorage.getItem("suryoday_leads") || "[]"
-      );
+    const data = Object.fromEntries(formData.entries());
 
-      leads.push({
-        ...data,
-        source,
-        at: new Date().toISOString(),
+    const payload = {
+      name: String(data.name || "").trim(),
+      phone: String(data.phone || "").trim(),
+      email: String(data.email || "").trim(),
+      city: String(data.city || "").trim(),
+      state: String(data.state || "").trim(),
+      bill: String(data.bill || "").trim(),
+      message: String(data.message || "").trim(),
+      source,
+    };
+
+    // Frontend validation
+    if (!payload.name || !payload.phone) {
+      toast.error("Please enter your name and phone number.");
+      return;
+    }
+
+    if (!/^[6-9]\d{9}$/.test(payload.phone)) {
+      toast.error("Please enter a valid 10-digit mobile number.");
+      return;
+    }
+
+    if (
+      payload.email &&
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email)
+    ) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
+
+    try {
+      setLoading(true);
+
+      const response = await fetch(`${API_URL}/api/contact`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
       });
 
-      localStorage.setItem("suryoday_leads", JSON.stringify(leads));
+      const result = await response.json().catch(() => ({}));
+
+      if (!response.ok || !result.success) {
+        throw new Error(
+          result.message || "Unable to submit your enquiry. Please try again."
+        );
+      }
 
       toast.success(
-        "Thank you! Our solar expert will call you within 30 minutes."
+        result.message ||
+          "Thank you! Our solar expert will call you within 30 minutes."
       );
 
       form.reset();
+    } catch (error) {
+      console.error("Lead submission error:", error);
+
+      toast.error(
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. Please try again."
+      );
+    } finally {
       setLoading(false);
-    }, 600);
+    }
   }
 
   const inputClass =
@@ -90,6 +141,7 @@ export function LeadForm({
           <input
             name="name"
             required
+            maxLength={100}
             placeholder="Full Name"
             autoComplete="name"
             className={`${inputClass} sm:col-span-2`}
@@ -103,7 +155,7 @@ export function LeadForm({
             type="tel"
             inputMode="numeric"
             autoComplete="tel"
-            pattern="[0-9]{10}"
+            pattern="[6-9][0-9]{9}"
             maxLength={10}
             placeholder="10-digit Phone"
             className={inputClass}
@@ -114,6 +166,7 @@ export function LeadForm({
           <input
             name="email"
             type="email"
+            maxLength={254}
             autoComplete="email"
             placeholder="Email Address"
             className={inputClass}
@@ -124,6 +177,7 @@ export function LeadForm({
           <input
             name="city"
             required
+            maxLength={100}
             placeholder="City"
             autoComplete="address-level2"
             className={inputClass}
@@ -173,6 +227,7 @@ export function LeadForm({
           <textarea
             name="message"
             rows={3}
+            maxLength={2000}
             placeholder="Tell us about your needs..."
             className={`${inputClass} min-h-[100px] resize-y sm:col-span-2`}
           />
@@ -182,7 +237,7 @@ export function LeadForm({
       <button
         type="submit"
         disabled={loading}
-        className="mt-4 sm:mt-5 min-h-[48px] w-full rounded-full gradient-sunrise px-5 sm:px-6 py-3.5 text-sm font-bold text-white shadow-premium transition-all hover:shadow-glow hover:scale-[1.01] active:scale-[0.99] disabled:opacity-60"
+        className="mt-4 sm:mt-5 min-h-[48px] w-full rounded-full gradient-sunrise px-5 sm:px-6 py-3.5 text-sm font-bold text-white shadow-premium transition-all hover:shadow-glow hover:scale-[1.01] active:scale-[0.99] disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {loading ? "Sending..." : cta + " →"}
       </button>
