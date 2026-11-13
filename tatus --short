@@ -1,0 +1,69 @@
+ backend/.gitignore                                 |    7 [32m+[m
+ backend/README.md                                  |  115 [32m++[m
+ backend/package-lock.json                          | 2043 [32m++++++++++++++++++++[m
+ backend/package.json                               |   26 [32m+[m
+ backend/server.js                                  |  236 [32m+++[m
+ .gitignore => frontend/.gitignore                  |    1 [32m+[m
+ .prettierignore => frontend/.prettierignore        |    0
+ .prettierrc => frontend/.prettierrc                |    0
+ {.vite => frontend/.vite}/deps/_metadata.json      |    0
+ {.vite => frontend/.vite}/deps/package.json        |    0
+ AGENTS.md => frontend/AGENTS.md                    |    0
+ README.md => frontend/README.md                    |    0
+ bun.lock => frontend/bun.lock                      |    0
+ bunfig.toml => frontend/bunfig.toml                |    0
+ components.json => frontend/components.json        |    0
+ eslint.config.js => frontend/eslint.config.js      |    0
+ package-lock.json => frontend/package-lock.json    |    0
+ package.json => frontend/package.json              |    0
+ {public => frontend/public}/favicon.png            |  Bin
+ .../public}/images/solar-battery-48v-100ah.jpeg    |  Bin
+ .../public}/images/solar-flame-torch-lights.jpeg   |  Bin
+ .../public}/images/solar-flood-light.jpeg          |  Bin
+ .../public}/images/solar-hybrid-inverter.jpeg      |  Bin
+ .../public}/images/solar-panels.jpeg               |  Bin
+ .../public}/images/solar-street-light-remote.jpeg  |  Bin
+ .../public}/images/solar-street-lights-range.jpeg  |  Bin
+ .../public}/images/solar-torch-lights-set.jpeg     |  Bin
+ .../public}/images/solar-wall-lantern-warm.jpeg    |  Bin
+ .../public}/images/solar-wall-lantern.jpeg         |  Bin
+ .../public}/images/solar-wall-light-dual.jpeg      |  Bin
+ {public => frontend/public}/robots.txt             |    0
+ .../public}/suryoday-solar-house-transparent.webp  |  Bin
+ .../public}/videos/suryoday-solar-video.mp4        |  Bin
+ roadmap.md => frontend/roadmap.md                  |    0
+ {src => frontend/src}/assets/about-solar.jpg       |  Bin
+ {src => frontend/src}/assets/hero-solar-house.png  |  Bin
+ {src => frontend/src}/assets/project-1.jpg         |  Bin
+ {src => frontend/src}/assets/project-2.jpg         |  Bin
+ {src => frontend/src}/assets/project-3.jpg         |  Bin
+ {src => frontend/src}/assets/project-4.jpg         |  Bin
+ {src => frontend/src}/assets/project-5.jpg         |  Bin
+ {src => frontend/src}/assets/project-6.jpg         |  Bin
+ .../9f81460a-c240-4b4d-b6aa-c804ad0250a6.jpeg      |  Bin
+ .../assets/projects/rooftop-installation-01.jpeg   |  Bin
+ .../projects/rooftop-installation-02.jpeg.jpeg     |  Bin
+ .../projects/solar-project-hybrid-system.png       |  Bin
+ .../projects/solar-project-installation-team.png   |  Bin
+ .../assets/projects/solar-project-inverter-1.png   |  Bin
+ .../assets/projects/solar-project-inverter-2.png   |  Bin
+ .../assets/projects/solar-project-inverter-3.png   |  Bin
+ .../assets/projects/solar-project-rooftop-1.png    |  Bin
+ .../src}/assets/service-commercial.jpg             |  Bin
+ .../src}/assets/service-industrial.jpg             |  Bin
+ .../src}/assets/service-maintenance.jpg            |  Bin
+ {src => frontend/src}/assets/service-pumps.jpg     |  Bin
+ .../src}/assets/service-residential.jpg            |  Bin
+ .../src}/assets/suryoday-logo.png.asset.json       |    0
+ {src => frontend/src}/assets/suryoday-logo.webp    |  Bin
+ .../src}/components/ProductsShowcase.tsx           |    0
+ {src => frontend/src}/components/VideoSection.tsx  |    0
+ .../src}/components/common/CountUp.tsx             |    0
+ .../src}/components/common/FloatingCTAs.tsx        |    0
+ {src => frontend/src}/components/common/Footer.tsx |    0
+ {src => frontend/src}/components/common/Navbar.tsx |    0
+ {src => frontend/src}/components/common/Reveal.tsx |    0
+ .../src}/components/common/ScrollProgress.tsx      |    0
+ .../src}/components/forms/LeadForm.tsx             |    0
+ {src => frontend/src}/components/home/Hero.tsx     |    0
+ {
